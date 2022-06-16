@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Outfit", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+
+.app:before {
+  content: "";
+  background: url("./assets/confam.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.app .search {
+  text-align: center;
+  padding: 1rem;
+}
+
+.app input {
+  padding: 3px 3px;
+  border: none;
+  width: 100%;
+  font-size: 1.2rem;
+  color: #f8f8f8;
+  outline: none;
+  background: rgba(255, 255, 255, 0);
+  margin-right: 5px;
+}
+
+.inputs{
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.icon{
+  background: rgba(255, 255, 255, 0);
+  color: white;
+}
+
+.button{
+  cursor: pointer;
+  border: none;
+  background: rgba(255, 255, 255, 0);
+}
+
+::placeholder {
+  color: #c0bfbf;
+}
+
+.container {
+  max-width: 700px;
+  height: 400px;
+  margin: auto;
+  padding: 0 1rem;
+  position: relative;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .container {
+    height: 400px;
+  }
+  .desc {
+    font-size: 16px;
+  }
+
+  .app .bottom {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 1rem 0rem;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .app {
+    height: 100%;
+  }
+}
+
+.app .top {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.app .description {
+  position: relative;
+  right: -90%;
+  transform-origin: 0 0;
+  transform: rotate(269deg);
+}
+
+.app .bottom {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem 20px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.footer {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.humidity {
+  margin: 0 1rem;
+}
+
+.confam {
+  font-weight: 800;
+  font-size: 34px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrow {
+  width: 50px;
+  transform: scaleY(-1);
+  animation: animateDown infinite 1s;
+}
+
+@keyframes animateDown {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(5px);
+  }
+
+  60% {
+    transform: translateY(3px);
+  }
+}
+
+.desc {
+  font-size: 18px;
+}
+
+.location {
+  text-transform: uppercase;
+}
