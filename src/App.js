@@ -3,11 +3,14 @@ import axios from "axios";
 import arrow from "./assets/down-arrow.svg";
 import { FaSearchLocation } from "react-icons/fa";
 
+const { REACT_APP_OPENWEATHERMAP_API_ID  } = process.env
+
 function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=415783e3e71e72253e9f6eff360f31fb`;
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${REACT_APP_OPENWEATHERMAP_API_ID}`;
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
