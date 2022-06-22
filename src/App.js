@@ -59,66 +59,70 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <div className="group">
-        <div className="confam">
-          <div className="time">
-            <Moment format="LT"></Moment>
-          </div>
-          <div className="date">
-            ** <Moment format="ll"></Moment> **
-          </div>
-        </div>
-        <p className="footer">{greeting()}</p>
-      </div>
-      <div className="search">
-        <img src={arrow} alt="" className="arrow" />
-        <div className="inputs">
-          <input
-            value={location}
-            onChange={(event) => setLocation(event.target.value)}
-            onKeyPress={searchLocation}
-            placeholder="Enter any city name"
-            type="text"
-          />
-          {/* <button className="button" onClick={searchLocation}>
-            <FaSearchLocation size={25} className="icon"/>
-          </button> */}
-        </div>
-      </div>
-      <div className="container">
-        <div className="top">
-          <div className="location">
-            <p>{data.name}</p>
-          </div>
-          <div className="temp">
-            {data.main ? <h1>{data.main.temp.toFixed()}°C</h1> : null}
-          </div>
-          <div className="description">
-            {data.weather ? <p>{data.weather[0].main}</p> : null}
-          </div>
-        </div>
-
-        {data.name !== undefined && (
-          <div className="bottom">
-            <div className="feels">
-              {data.main ? (
-                <p className="bold">{data.main.feels_like.toFixed()}°C</p>
-              ) : null}
-              <p className="desc">Feels Like</p>
+    <div className="">
+      <div className="app">
+        <div className="group">
+          <div className="confam">
+            <div className="time">
+              <Moment format="LT"></Moment>
             </div>
-            <div className="humidity">
-              {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
-              <p className="desc">Humidity</p>
-            </div>
-            <div className="wind">
-              {data.wind ? (
-                <p className="bold">{data.wind.speed.toFixed()} MPH</p>
-              ) : null}
-              <p className="desc">Wind Speed</p>
+            <div className="date">
+              ** <Moment format="ll"></Moment> **
             </div>
           </div>
-        )}
+          <p className="footer">{greeting()}</p>
+        </div>
+        <div className="search">
+          <img src={arrow} alt="" className="arrow" />
+          <div className="inputs">
+            <input
+              value={location}
+              onChange={(event) => setLocation(event.target.value)}
+              onKeyPress={searchLocation}
+              placeholder="Enter any city name"
+              type="text"
+            />
+            {/* <button className="button" onClick={searchLocation}>
+              <FaSearchLocation size={25} className="icon"/>
+            </button> */}
+          </div>
+        </div>
+        <div className="container">
+          <div className="top">
+            <div className="location">
+              <p>{data.name}</p>
+            </div>
+            <div className="temp">
+              {data.main ? <h1>{data.main.temp.toFixed()}°C</h1> : null}
+            </div>
+            <div className="description">
+              {data.weather ? <p>{data.weather[0].main}</p> : null}
+            </div>
+          </div>
+          {data.name !== undefined && (
+            <div className="bottom">
+              <div className="feels">
+                {data.main ? (
+                  <p className="bold">{data.main.feels_like.toFixed()}°C</p>
+                ) : null}
+                <p className="desc">Feels Like</p>
+              </div>
+              <div className="humidity">
+                {data.main ? (
+                  <p className="bold">{data.main.humidity}%</p>
+                ) : null}
+                <p className="desc">Humidity</p>
+              </div>
+              <div className="wind">
+                {data.wind ? (
+                  <p className="bold">{data.wind.speed.toFixed()} MPH</p>
+                ) : null}
+                <p className="desc">Wind Speed</p>
+              </div>
+            </div>
+          )}
+        </div>
+      <p className="footer">Developed by Ifeanyi Umeh - 2022</p>
       </div>
     </div>
   );
