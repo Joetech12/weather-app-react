@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import arrow from "./assets/down-arrow.svg";
 import { FaSearchLocation } from "react-icons/fa";
+import Moment from "react-moment";
+import "moment-timezone";
 
-const { REACT_APP_OPENWEATHERMAP_API_ID  } = process.env
+const { REACT_APP_OPENWEATHERMAP_API_ID } = process.env;
 
 function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
-
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${REACT_APP_OPENWEATHERMAP_API_ID}`;
 
@@ -22,11 +23,53 @@ function App() {
     }
   };
 
+  // Date function
+  let today2 = new Date();
+  // console.log(today)
+  let date =
+    today2.getDate() + "/" + today2.getMonth() + "/" + today2.getFullYear();
+
+  // Time function
+
+  let today = new Date();
+
+  let greeting = () => {
+    if (today.getHours() >= 24 && today.getHours() < 11) {
+      return (
+        <p className="">
+          Good Morning, <span className="">Welcome to Weather 911 App</span>
+        </p>
+      );
+    } else if (today.getHours() >= 11 && today.getHours() < 17) {
+      return (
+        <p className="">
+          Good Afternoon, <span className="">Welcome to Weather 911 App</span>
+        </p>
+      );
+    } else if (today.getHours() >= 17 && today.getHours() < 24) {
+      return (
+        <div className="">
+          <p className="greeting">Good Evening, I'm Weather 911</p>
+          <p className="greeting2">I'll give you global weather updates.</p>
+        </div>
+      );
+    } else {
+      return "What are you doing up at this hour?";
+    }
+  };
+
   return (
     <div className="app">
       <div className="group">
-        <p className="confam">WEATHER 911</p>
-        <p className="footer">Developed by Ifeanyi Umeh</p>
+        <div className="confam">
+          <div className="time">
+            <Moment format="LT"></Moment>
+          </div>
+          <div className="date">
+            ** <Moment format="ll"></Moment> **
+          </div>
+        </div>
+        <p className="footer">{greeting()}</p>
       </div>
       <div className="search">
         <img src={arrow} alt="" className="arrow" />
@@ -35,7 +78,7 @@ function App() {
             value={location}
             onChange={(event) => setLocation(event.target.value)}
             onKeyPress={searchLocation}
-            placeholder="Enter Location"
+            placeholder="Enter any city name"
             type="text"
           />
           {/* <button className="button" onClick={searchLocation}>
