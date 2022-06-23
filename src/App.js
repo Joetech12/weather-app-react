@@ -34,17 +34,19 @@ function App() {
   let today = new Date();
 
   let greeting = () => {
-    if (today.getHours() >= 24 && today.getHours() < 11) {
+    if (today.getHours() >= 24 && today.getHours() < 12) {
       return (
-        <p className="">
-          Good Morning, <span className="">Welcome to Weather 911 App</span>
-        </p>
+        <div className="">
+          <p className="greeting">Good Morning, I'm Weather 911</p>
+          <p className="greeting2">I'll give you global weather updates.</p>
+        </div>
       );
-    } else if (today.getHours() >= 11 && today.getHours() < 17) {
+    } else if (today.getHours() >= 12 && today.getHours() < 17) {
       return (
-        <p className="">
-          Good Afternoon, <span className="">Welcome to Weather 911 App</span>
-        </p>
+        <div className="">
+          <p className="greeting">Good Afternoon, I'm Weather 911</p>
+          <p className="greeting2">I'll give you global weather updates.</p>
+        </div>
       );
     } else if (today.getHours() >= 17 && today.getHours() < 24) {
       return (
@@ -54,7 +56,12 @@ function App() {
         </div>
       );
     } else {
-      return "What are you doing up at this hour?";
+      return (
+        <div className="">
+          <p className="greeting">Good Morning, I'm Weather 911</p>
+          <p className="greeting2">I'll give you global weather updates.</p>
+        </div>
+      );
     }
   };
 
@@ -122,7 +129,7 @@ function App() {
             </div>
           )}
         </div>
-      <p className="footer">Developed by Ifeanyi Umeh - 2022</p>
+        <p className="footer">Developed by Ifeanyi Umeh - 2022</p>
       </div>
     </div>
   );
